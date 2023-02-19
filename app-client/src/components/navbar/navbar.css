@@ -1,0 +1,105 @@
+.navbar{
+    height: 70px;
+    width: 100%;
+}
+.wrapper{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.leftbar{
+    flex:1;
+}
+.leftbar h1{
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.616);
+    margin: 0;
+    font-size: 20px;
+}
+.navbar-logo{
+    color:brown;
+    font-size: 30px;
+    font-style:oblique;
+}
+.navbar-point{
+    font-size: 25px;
+}
+.centerbar{
+    flex:1;
+    display: flex;
+    align-items: center;
+    height: 35px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid gray;
+}
+.input-search{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+}
+.centerbar .search{
+    color:gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+    background: rgba(128, 128, 128, 0.103);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.rightbar{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.menuItem{
+    position: relative;
+    font-size: 13px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.menuItem span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 13px;
+    width: 13px;
+    padding: 3px;
+    border-radius: 50%;
+    background:brown;
+    color: #FFF;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+}
+.menuItem i{
+    font-size: 20px;
+}
+
+@media screen and (max-width:414px){
+    .center-row{
+        display: none;
+    }
+    .leftbar{
+        flex:1;
+    }
+    .rightbar{
+        flex:3;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+    .menuItem{
+        font-size: 12px;
+        cursor: pointer;
+        margin-left: 1px;
+    }
+}

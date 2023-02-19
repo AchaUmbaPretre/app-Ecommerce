@@ -1,0 +1,115 @@
+.footer{
+    display: flex;
+
+}
+.footer-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.footer-logo{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+.footer-desc{
+    font-size: 15px;
+    line-height: 25px;
+    color: black;
+}
+.footer-reseaux{
+    display: flex;
+    gap: 10px;
+}
+.footer-icon{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+.footer-icon:hover{
+    transform: scale(1.1);
+}
+.footer-icon i{
+    font-size: 30px;
+}
+.face{
+    color: rgba(0, 119, 255, 0.89);
+}
+.insta{
+    color:rgba(177, 20, 20, 0.911);
+}
+.twitter{
+    color: blue;
+}
+.link{
+    color: rgba(24, 21, 21, 0.87);
+}
+
+.footer-center{
+    flex: 1;
+    padding: 20px;
+}
+.footer-logo-center{
+    margin: 0;
+    margin-bottom: 30px;
+}
+.footer-center-container{
+    list-style:none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+.footer-center-container li{
+    width: 50%;
+    font-size: 15px;
+    color: black;
+    cursor: pointer;
+    padding: 5px 0;
+}
+.footer-center-container li:hover{
+    color: brown;
+}
+.footer-right{
+    flex: 1;
+    padding: 20px;
+}
+.footer-right h3{
+    padding: 0;
+    margin:0;
+    margin-bottom: 30px;
+}
+.footer-location{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+.icon-location{
+    color: red;
+}
+.icon-phone{
+    color: blue;
+}
+.footer-right-desc{
+    font-size: 15px;
+    color: black;
+}
+.footer-banques{
+    width: 40px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:414px) {
+    .footer{
+        flex-direction: column;
+    
+    }
+}

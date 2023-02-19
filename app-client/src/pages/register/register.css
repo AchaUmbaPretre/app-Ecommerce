@@ -1,0 +1,50 @@
+.register{
+    background: radial-gradient(rgba(0, 0, 0, 0.692),rgba(0,0,0,0.6)), url(../../assets/acha.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.register-contenaire{
+    width: 40%;
+    padding: 20px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.register-title{
+    font-size: 25px;
+    font-weight: 400;
+}
+.register-row{
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.register-input{
+    flex: 1;
+    border: 1px solid lightgray;
+    height: 30px;
+    padding: 5px 10px;
+}
+.register-link{
+    text-decoration: none;
+    font-size: 14px;
+}
+.register-btn{
+    height: 40px;
+    padding: 5px 10px;
+    background: brown;
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+.register-btn:hover{
+    background: rgba(163, 50, 50, 0.863);;
+}
