@@ -35,12 +35,11 @@ export const orderDelete = async (req, res) =>{
     }
 }
 
-export const getRecoverOrder = async (req, res)=>{
+export const getRecoverOrder = async(req, res)=>{
 
     try{
-        const recoverOrderId = await Order.findById(req.params.id);
-        const {password, ...other} = recoverOrderId._doc;
-        res.status(200).json(other)
+        const recoverOrderId = await Order.find({ userId : req.params.userId });
+        res.status(200).json(recoverOrderId)
 
     }
     catch(error){
@@ -48,6 +47,35 @@ export const getRecoverOrder = async (req, res)=>{
     }
 }
 
-export const getAllRecoverOrde = (req)=>{
+export const getAllRecoverOrde = async (req, res)=>{
 
+    try{
+        const recoverAllOrder = await Order.find();
+        res.status(200).json(recoverAllOrder)
+
+    }
+    catch(error){
+        res.status(500).json(error)
+    }
+}
+
+//Get mensuel revenu
+
+export const getIncome = async (req, res)=>{
+    const date = new Date();
+    const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
+    const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1));
+
+    try{
+        const income = await Order.aggregate([
+            { $match: { createdAt : { $gte : previousMonth }} },
+            { $project : { month : { $month : "$createdAt"}, sales : "$amount" } },
+            { $group : { _id: "$month", total: { $sum: "$sales" } }},
+
+        ]);
+        res.status(200).json(income)
+    }
+    catch(error){
+        res.status(500).json(error)
+    }
 }

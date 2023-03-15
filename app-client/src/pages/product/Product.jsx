@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Footer from '../../components/footer/Footer'
 import Navbar from '../../components/navbar/Navbar'
 import Newsletter from '../../components/newsletter/Newsletter'
 import Topbar from '../../components/topbar/Topbar'
-import image3  from '../../assets/image3.jpg'
 import './product.css'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../../redux/cartRedux'
 import { useLocation } from 'react-router-dom'
+import { publicRequest } from '../../methodeRequest'
 
 const Product = () => {
 
@@ -20,6 +20,20 @@ const Product = () => {
     const [size, setSize] = useState("");
     const dispatch = useDispatch();
 
+    useEffect(() =>{
+        const getProduct = async () =>{
+
+            try{
+                const res = await publicRequest.get("product/find/"+ id);
+                setProduct(res.data)
+            }
+            catch(error){
+                console.log(error)
+            }
+        }
+        getProduct();
+    }, [id])
+
     const handleQuantity = (type) =>{
 
         type === "inc" ? setQuantity(quantity + 1) 
@@ -28,7 +42,7 @@ const Product = () => {
 
     const handleClick = () =>{
         dispatch(
-            addProduct({ product, quantity, price: product.price * quantity})
+            addProduct({ ...product, quantity, color, size })
         )
     }
   
@@ -39,30 +53,27 @@ const Product = () => {
             <Topbar/>
             <div className="product-container">
                 <div className="product-left">
-                    <img src={image3} alt="" className="product-img" />
+                    <img src={product.img} alt="" className="product-img" />
                 </div>
                 <div className="product-right">
-                    <h1 className="product-titre">Denim Jumpsuit</h1>
-                    <p className="product-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                     Hic, maxime fugiat blanditiis aliquam molestiae obcaecati quae eveniet perspiciatis?
-                      Alias aut quisquam eveniet, maxime voluptatibus voluptate blanditiis ipsum unde ab cum.
-                    </p>
-                    <span className="product-price">$ 50</span>
+                    <h1 className="product-titre">{product.title}</h1>
+                    <p className="product-desc">{product.desc}</p>
+                    <span className="product-price">$ {product.price}</span>
                     <div className="filter-product">
                         <div className="filter">
                             <span className="filter-titre">Color</span>
-                            <div className='filter-color' color='black' />
-                            <div  className='filter-color bleu' color='darkbleu'/>
-                            <div  className='filter-color gray' color='gray'/>
+                           {
+                                product.color?.map(c =>(
+                                    <div className={`filter-color ${c}`} key={c} color={c} />
+                                )) 
+                            }
                         </div>
                         <div className="filter">
                             <span className="filter-titre">Size</span>
                             <select name="" id="">
-                                <option value="">XS</option>
-                                <option value="">S</option>
-                                <option value="">M</option>
-                                <option value="">L</option>
-                                <option value="">XL</option>
+                             { product.size?.map((s) =>(
+                                    <option value="" key={s} >{s}</option>
+                                    ))}
                             </select>
                         </div>
                     </div>

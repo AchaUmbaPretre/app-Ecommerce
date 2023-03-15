@@ -1,105 +1,146 @@
 .navbar{
+    overflow: hidden;
     height: 70px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 111;
+    box-shadow: 1px 2px 11px 9px rgba(0, 0, 0, 0.048);
 }
 .wrapper{
-    padding: 10px 20px;
+    margin: 0 20px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .leftbar{
-    flex:1;
-}
-.leftbar h1{
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.616);
-    margin: 0;
-    font-size: 20px;
-}
-.navbar-logo{
-    color:brown;
-    font-size: 30px;
-    font-style:oblique;
-}
-.navbar-point{
-    font-size: 25px;
-}
-.centerbar{
-    flex:1;
+    flex: 1;
     display: flex;
     align-items: center;
-    height: 35px;
-    border-radius: 5px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid gray;
-}
-.input-search{
+    justify-content: flex-start;
+    gap: 20px;
     width: 100%;
-    height: 100%;
-    padding: 10px;
-    border: none;
 }
-.centerbar .search{
-    color:gray;
+.leftbarWrapper1{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.leftbarLangue{
+    color: grey;
+    font-weight: 300;
+}
+.leftbar-pays{
+    width: 30px;
+    height: 20px;
+}
+.leftbarWrapper{
+    position: relative;
+    border: 1px solid lightgrey;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    padding: 10px;
-    background: rgba(128, 128, 128, 0.103);
-    font-size: 16px;
-    cursor: pointer;
+    border-radius:5px;
+    height: 30px;
+    overflow: hidden;
 }
-
-.rightbar{
-    flex:1;
+.navbarInput{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    border: none;
+    padding: 5px 10px;
+    outline: none;
+}
+.centerbar{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.centerh1{
+    font-size: 1.5rem;
+}
+.search{
+    height: 100%;
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+    background: rgb(238, 235, 235);
+    cursor: pointer;
+}
+.rightbar{
+    flex: 1;
+    display: flex;
+    align-items: center;
     gap: 20px;
+    justify-content: flex-end;
+    width: 100%;
 }
 .menuItem{
     position: relative;
-    font-size: 13px;
-    cursor: pointer;
-    margin-left: 15px;
 }
-.menuItem span{
+.menuItemSpan{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: rgb(17, 17, 240);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 13px;
-    width: 13px;
-    padding: 3px;
+    width: 20px;
+    height: 20px;
+    color: #fff;
     border-radius: 50%;
-    background:brown;
-    color: #FFF;
-    font-size: 12px;
-    position: absolute;
-    top: -10px;
-    left: 15px;
-}
-.menuItem i{
-    font-size: 20px;
+    font-size: .8rem;
 }
 
-@media screen and (max-width:414px){
-    .center-row{
+@media screen and (max-width:414px) {
+    .leftbarLangue,.leftbar-pays{
         display: none;
+        margin: 0;
     }
     .leftbar{
-        flex:1;
+        width: 30%;
+        gap: 0;
+    }
+    .navbarInput{
+        width: 100%;
+    }
+    .leftbarLangue{
+        color: grey;
+        font-size: 1rem;
+    }
+    .leftbar-pays{
+        width: 25px;
+        height: 20px;
+    }
+    .leftbarWrapper{
+        justify-content: flex-start;
+        border-radius:5px;
+        height: 30px;
+        overflow: hidden;
+    }
+    .search{
+        height: 100%;
+        width: 20%;
+        padding: 5px;
+        background: rgb(238, 235, 235);
+        cursor: pointer;
+    }
+    .centerbar{
+        
+    }
+    .centerh1{
+        font-size: 1.2rem;
     }
     .rightbar{
-        flex:3;
-        justify-content: flex-end;
-        gap: 15px;
+        flex: 0;
     }
-    .menuItem{
-        font-size: 12px;
-        cursor: pointer;
-        margin-left: 1px;
+    .menuLink{
+        display: none;
     }
 }

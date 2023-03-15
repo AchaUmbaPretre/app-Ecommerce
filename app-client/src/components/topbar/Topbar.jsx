@@ -5,7 +5,7 @@ const Topbar = () => {
   return (
     <>
         <div className="topbar">
-            <span>Super Deal! Free Shipping on Order Over $50</span>
+            <span className="topbarTitle">Super Deal! Free Shipping on Order Over $50</span>
         </div>
     </>
   )

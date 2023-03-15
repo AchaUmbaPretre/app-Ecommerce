@@ -4,8 +4,8 @@ import { persistStore,
         FLUSH, REHYDRATE,
         PAUSE,
         PERSIST,
-        PURGE, REGISTER, } from 'react-persist'
-import storage from 'redux-persist/lib/storage'
+        PURGE, REGISTER, } from 'redux-persist'
+import storage from "redux-persist/lib/storage";
 import cartReducer from "./cartRedux";
 import userReducer from './userRedux'
 

@@ -7,6 +7,7 @@ import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import Cart from './pages/cart/Cart';
 import { BrowserRouter as Router,Routes,Route,Navigate} from 'react-router-dom'
+import Pay from './pages/pay/Pay';
 
 function App() {
   const user= false;
@@ -20,6 +21,7 @@ function App() {
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/login' element={ user? <Navigate to='/'/> :<Login/>}/>
             <Route path='/register' element={user? <Navigate to='/'/> :<Register/>}/>
+             {/* <Route path='/pay' element={<Pay/>} /> */}
           </Routes>
         </Router>
     </div>

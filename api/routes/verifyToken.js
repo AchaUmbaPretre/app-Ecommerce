@@ -19,3 +19,12 @@ export const verifyTokenEtAUthorisation = (req, res, next) =>{
     })
 
 }
+
+export const verifyTokenAdmin = (req, res, next) =>{
+
+    verifyToken(req, res, ()=>{
+        req.user.isAdmin ? next()
+        : res.status(403).json("Tu n'as pas le droit de faire ca!")
+    })
+
+}
