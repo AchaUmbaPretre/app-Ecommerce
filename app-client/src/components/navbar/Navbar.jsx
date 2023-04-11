@@ -7,7 +7,6 @@ import rdc from '../../assets/rdc.jpg'
 const Navbar = () => {
 
   const quantity = useSelector(state => state.cart.quantity);
-  console.log(quantity)
 
   return (
     <>
@@ -32,10 +31,12 @@ const Navbar = () => {
             <Link to='/register'><div className='menuItem menuLink'>REGISTER</div></Link>
             <Link to='/login'><div className='menuItem menuLink'>SIGN IN</div></Link>
             <Link to= '/cart'>
+              { quantity > 0 &&
               <div className="menuItem">
                 <span className="menuItemSpan" >{quantity}</span>
                 <i className="fas fa-cart-shopping"></i>
               </div>
+              }
             </Link>
           </div>
         </div>

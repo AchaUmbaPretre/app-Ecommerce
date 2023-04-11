@@ -1,6 +1,6 @@
 import React from 'react'
 import './slider.css'
-import ndambi from '../../assets/ndambi.png'
+import ndambi from '../../assets/image6.jpg'
 
 const Slider = () => {
   return (
